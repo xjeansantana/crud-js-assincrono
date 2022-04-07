@@ -17,7 +17,6 @@ const criaNovaLinha = (nome, email) => {
 
 const tabela = document.querySelector('[data-tabela]')
 
-
 const http = new XMLHttpRequest()
 
 http.open('GET', 'http://localhost:3000/profile')
@@ -28,6 +27,9 @@ http.onload = () => {
     const data = JSON.parse(http.response)
     data.forEach(elemento => {
         tabela.appendChild(criaNovaLinha(elemento.nome, elemento.email))
-      
+
     });
+
+   
+
 }
